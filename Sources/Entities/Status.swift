@@ -19,6 +19,7 @@ public class Status: Decodable {
     public let inReplyToAccount: StatusId?
     public let reblog: Status?
     public let content: Html
+    public let contentString: String
     public let createdAt: String
     public let reblogsCount: Int
     public let favouritesCount: Int
@@ -65,5 +66,6 @@ public class Status: Decodable {
         self.mentions = "mentions" <~~ json ?? []
         self.tags = "tags" <~~ json ?? []
         self.application = "application" <~~ json
+        self.contentString = self.content.replacingOccurrences(of: "<[^>]+>", with: "", options: .regularExpression,range: nil)
     }
 }
