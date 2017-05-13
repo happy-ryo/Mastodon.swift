@@ -23,8 +23,8 @@ public class Status: Decodable {
     public let createdAt: String
     public let reblogsCount: Int
     public let favouritesCount: Int
-    public let reblogged: Bool
-    public let favourited: Bool
+    public var reblogged: Bool
+    public var favourited: Bool
     public let sensitive: Bool
     public let spoilerText: String?
     public let visiblity: Visibility
