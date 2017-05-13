@@ -6,6 +6,7 @@ public struct Attachment: Decodable {
         case image = "image"
         case video = "video"
         case gifv = "gifv"
+        case unknown = "unknown"
     }
     
     public let id: Int
